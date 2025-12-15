@@ -1,11 +1,18 @@
+#include <stdio.h>
+struct person {
+    int age;
+    int grad_year; 
+    double height;
+};
 
+void age_up(struct person *p) {
+    p->age ++;
+    printf("New age: %d\n", p->age);
+}
 
 int main(void) {
-    printf("Hello, World!\n");
-    int arr[] = {99,99,99,99};
-    int arr2[] = {101, 102, 103, 104};
-    printf("arr[0]: %d, OUT OF BOUNDS?: %d\n", arr[0], arr[4]);
-    printf("arr2[0]: %d\n" , arr2[0]);
-
+    struct person gerardo = {40, 1999, 5.9};
+    age_up(&gerardo);
+    printf("Gerardo's age is now %d\n", gerardo.age);
     return 0;
 }
